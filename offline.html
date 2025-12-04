@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Offline - Mainstream Tinting</title>
+        <meta name="theme-color" content="#000000" />
+        <meta name="color-scheme" content="dark" />
+        
+        <link rel="canonical" href="https://www.mainstream-tinting.com/offline.html" />
+        <link href="./style.css" rel="stylesheet" />
+        <style>
+            .offline-container {
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 2rem;
+                background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            }
+            .offline-content {
+                text-align: center;
+                max-width: 500px;
+                color: #e5e7eb;
+            }
+            .offline-icon {
+                width: 80px;
+                height: 80px;
+                margin: 0 auto 2rem;
+                opacity: 0.7;
+            }
+            .retry-btn {
+                background: linear-gradient(135deg, #ff4081 0%, #00f0ff 100%);
+                color: white;
+                padding: 12px 24px;
+                border: none;
+                border-radius: 8px;
+                font-weight: 600;
+                cursor: pointer;
+                transition: transform 0.2s;
+            }
+            .retry-btn:hover {
+                transform: translateY(-2px);
+            }
+        </style>
+        
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S5PJYZ1X7T"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-S5PJYZ1X7T');
+    </script>
+</head>
+    <body>
+        <div class="offline-container">
+            <div class="offline-content">
+                <div class="offline-icon">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-label="Offline status icon">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                </div>
+                
+                <h1 style="font-size: 2rem; margin-bottom: 1rem; color: #ff4081;">You're Offline</h1>
+                
+                <p style="margin-bottom: 2rem; font-size: 1.1rem; line-height: 1.6;">
+                    No internet connection detected. Some content may not be available, but you can still browse cached pages.
+                </p>
+                
+                <div style="margin-bottom: 2rem;">
+                    <p style="margin-bottom: 1rem;">Try these options:</p>
+                    <ul style="text-align: left; display: inline-block;">
+                        <li style="margin-bottom: 0.5rem;">Check your internet connection</li>
+                        <li style="margin-bottom: 0.5rem;">Refresh the page when connected</li>
+                        <li style="margin-bottom: 0.5rem;">Browse cached pages</li>
+                    </ul>
+                </div>
+                
+                <button class="retry-btn" onclick="window.location.reload()" aria-label="Retry loading the page">
+                    Try Again
+                </button>
+                
+                <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #374151;">
+                    <p style="font-size: 0.9rem; opacity: 0.8;">
+                        <strong>Need immediate assistance?</strong><br>
+                        Call me at <a href="tel:7037725185" style="color: #ff4081;">(703) 772-5185</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // Check for connection and redirect when back online
+            window.addEventListener('online', () => {
+                window.location.reload();
+            });
+            
+            // Update status
+            if (navigator.onLine) {
+                document.querySelector('h1').textContent = 'Connection Restored';
+                document.querySelector('p').textContent = 'Your internet connection has been restored. Click "Try Again" to continue.';
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,39 @@
+# Robots.txt for Mainstream Tinting
+# Allow all search engines to crawl the site
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.mainstream-tinting.com/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Disallow crawling of admin or private areas (if any exist in the future)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Allow crawling of important pages
+Allow: /index.html
+Allow: /residential.html
+Allow: /commercial.html
+Allow: /gallery.html
+Allow: /technology.html
+Allow: /about.html
+Allow: /areas-we-serve.html
+Allow: /removal.html
+
+# Allow crawling of assets
+Allow: /style.css
+Allow: /main.js
+Allow: /*.webp$
+Allow: /*.jpg$
+Allow: /*.png$
+Allow: /*.svg$
+
+# Block crawling of development files
+Disallow: /test-dropdown.html
+Disallow: /*.log$
+Disallow: /node_modules/
+Disallow: /.git/
