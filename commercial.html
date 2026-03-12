@@ -55,7 +55,7 @@
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/favicon-96x96.png" />
         <link rel="manifest" href="/site.webmanifest" />
-        <link href="./style.css?v=2.1" rel="stylesheet" />
+        <link href="./style.css?v=2.5" rel="stylesheet" />
         
         <!-- CRITICAL: Override ALL hiding mechanisms for dropdown -->
         <style>
@@ -200,7 +200,7 @@
         </style>
 
         <!-- Load main.js FIRST (synchronously) to register data BEFORE Alpine loads -->
-        <script src="main.js?v=2.6"></script>
+        <script src="main.js?v=3.1"></script>
         <!-- Load collapse plugin -->
         <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
         <!-- Load Alpine.js core LAST -->
@@ -210,7 +210,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link rel="dns-prefetch" href="https://www.google.com" />
         <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
-        <link rel="preload" href="main.js?v=2.6" as="script" fetchpriority="high" />
+        <link rel="preload" href="main.js?v=3.1" as="script" fetchpriority="high" />
         <link
             href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
             rel="stylesheet"
@@ -840,7 +840,6 @@
         <header
             class="hero-gradient-bg relative flex items-center justify-center overflow-hidden pb-8 pt-20 sm:pb-10 md:pb-12 md:pt-24 lg:pb-14"
         >
-
             <div class="relative z-20 mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
                 <h1
                     class="hero-title-neon mb-3 pt-4 font-display text-2xl font-extrabold leading-tight text-white sm:mb-4 sm:pt-6 sm:text-3xl md:pt-8 md:text-4xl lg:text-5xl"
@@ -1279,22 +1278,14 @@
                         </svg>
                     </a>
                 </div>
-
                 <div class="grid grid-cols-2 gap-2 sm:gap-4 md:grid-cols-4">
                     <div class="group relative overflow-hidden rounded-lg bg-black">
                         <div class="relative aspect-[4/5]">
                             <picture>
                                 <source srcset="comref2.webp" type="image/webp" />
-                                <img loading="lazy"
-                                    src="comref2.jpeg"
-                                    alt="Commercial building with 17% reflective film"
-                                    class="h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-90"
-                                    decoding="async"
-                                />
+                                <img loading="lazy" src="comref2.jpeg" alt="Commercial building with 17% reflective film" class="h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-90" decoding="async" />
                             </picture>
-                            <div
-                                class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent p-2.5 sm:p-3"
-                            >
+                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent p-2.5 sm:p-3">
                                 <h3 class="mb-0.5 text-xs font-bold text-white sm:text-sm">Dual-Reflective Film</h3>
                                 <p class="text-[10px] text-gray-300 sm:text-xs leading-tight">45-85% heat rejection, LEED eligible</p>
                             </div>
@@ -1304,16 +1295,9 @@
                         <div class="relative aspect-[4/5]">
                             <picture>
                                 <source srcset="comstore.webp" type="image/webp" />
-                                <img loading="lazy"
-                                    src="comstore.jpeg"
-                                    alt="Storefront with ceramic solar control film, signal-friendly for retail displays"
-                                    class="h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-90"
-                                    decoding="async"
-                                />
+                                <img loading="lazy" src="comstore.jpeg" alt="Storefront with ceramic solar control film" class="h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-90" decoding="async" />
                             </picture>
-                            <div
-                                class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent p-2.5 sm:p-3"
-                            >
+                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent p-2.5 sm:p-3">
                                 <h3 class="mb-0.5 text-xs font-bold text-white sm:text-sm">Ceramic Solar Film</h3>
                                 <p class="text-[10px] text-gray-300 sm:text-xs leading-tight">Signal-friendly, 45-70% heat rejection</p>
                             </div>
@@ -1323,15 +1307,9 @@
                         <div class="relative aspect-[4/5]">
                             <picture>
                                 <source srcset="comoffice.webp" type="image/webp" />
-                                <img loading="lazy"
-                                    src="comoffice.jpeg"
-                                    alt="Office with frosted privacy film"
-                                    class="h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-90"
-                                />
+                                <img loading="lazy" src="comoffice.webp" alt="Office with frosted privacy film" class="h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-90" decoding="async" />
                             </picture>
-                            <div
-                                class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent p-2.5 sm:p-3"
-                            >
+                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent p-2.5 sm:p-3">
                                 <h3 class="mb-0.5 text-xs font-bold text-white sm:text-sm">Decorative & Branding</h3>
                                 <p class="text-[10px] text-gray-300 sm:text-xs leading-tight">24/7 privacy, custom patterns</p>
                             </div>
@@ -1341,16 +1319,9 @@
                         <div class="relative aspect-[4/5]">
                             <picture>
                                 <source srcset="comvt.webp" type="image/webp" />
-                                <img
-                                    src="comvt.jpeg"
-                                    alt="Custom decorative film with precision-cut brand logos for commercial branding"
-                                    class="h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-90"
-                                    loading="eager"
-                                />
+                                <img loading="lazy" src="comvt.webp" alt="Custom decorative film with brand logos" class="h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-90" decoding="async" />
                             </picture>
-                            <div
-                                class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent p-2.5 sm:p-3"
-                            >
+                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent p-2.5 sm:p-3">
                                 <h3 class="mb-0.5 text-xs font-bold text-white sm:text-sm">Decorative & Branding</h3>
                                 <p class="text-[10px] text-gray-300 sm:text-xs leading-tight">Computer-cut logos & graphics</p>
                             </div>

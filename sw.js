@@ -1,7 +1,7 @@
 // Enhanced Service Worker for Mainstream Tinting
 // Provides advanced offline functionality and intelligent caching
 
-const CACHE_NAME = 'mainstream-tinting-v1.2';
+const CACHE_NAME = 'mainstream-tinting-v1.3';
 const OFFLINE_PAGE = '/offline.html';
 const CACHE_STRATEGY = {
     CACHE_FIRST: 'cache-first',

@@ -556,6 +556,12 @@ body.scrolling .hero-gradient-bg {
     will-change: auto;
 }
 
+/* Subpage headers with photo layer: orbs above photo */
+.hero-gradient-bg::before,
+.hero-gradient-bg::after {
+    z-index: 1;
+}
+
 .hero-gradient-bg::before {
     content: '';
     position: absolute;
@@ -601,6 +607,12 @@ body.scrolling .hero-gradient-bg-home {
     will-change: auto;
 }
 
+/* Keep pink/cyan orbs above hero photo blend so color stays visible */
+.hero-gradient-bg-home::before,
+.hero-gradient-bg-home::after {
+    z-index: 1;
+}
+
 .hero-gradient-bg-home::before {
     content: '';
     position: absolute;
@@ -634,6 +646,42 @@ body.scrolling .hero-gradient-bg-home {
 
 .hero-badge {
     border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Index hero mobile: photo + title readability (also appended to style.css if build not run) */
+@media (max-width: 639px) {
+    #hero-header .hero-home-blend-photo {
+        opacity: 0.26 !important;
+    }
+    #hero-header .hero-home-scrim {
+        background: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.72) 0%,
+            rgba(0, 0, 0, 0.58) 45%,
+            rgba(0, 0, 0, 0.72) 100%
+        ) !important;
+    }
+    #hero-header h1.hero-title-neon,
+    #hero-header h1 .hero-title-neon-pink {
+        text-shadow:
+            0 2px 14px rgba(0, 0, 0, 0.95),
+            0 4px 28px rgba(0, 0, 0, 0.85),
+            0 0 2px rgba(0, 0, 0, 1) !important;
+        filter: none !important;
+    }
+    #hero-header .hero-badge {
+        background-color: rgba(0, 0, 0, 0.72) !important;
+        border-color: rgba(255, 255, 255, 0.25) !important;
+    }
+}
+@media (min-width: 640px) and (max-width: 767px) {
+    #hero-header h1.hero-title-neon,
+    #hero-header h1 .hero-title-neon-pink {
+        text-shadow:
+            0 2px 12px rgba(0, 0, 0, 0.9),
+            0 4px 20px rgba(0, 0, 0, 0.75) !important;
+        filter: none !important;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1175,15 +1223,24 @@ html {
     }
 }
 
+/* Root scroll: keep overflow-x hidden on all devices. Touch/overscroll tweaks
+   only on coarse pointers — avoids Chrome desktop wheel/trackpad fighting. */
 html, body {
     overflow-x: hidden;
     max-width: 100vw;
-    -webkit-overflow-scrolling: touch;
-    overscroll-behavior: contain;
+}
+
+@media (hover: none) and (pointer: coarse) {
+    html, body {
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
+    }
+    body {
+        touch-action: pan-y pinch-zoom;
+    }
 }
 
 body {
-    touch-action: pan-y pinch-zoom;
     -webkit-tap-highlight-color: rgba(255, 64, 129, 0.2);
     -webkit-text-size-adjust: 100%;
     -moz-text-size-adjust: 100%;

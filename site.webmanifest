@@ -30,22 +30,6 @@
       "purpose": "maskable"
     }
   ],
-  "screenshots": [
-    {
-      "src": "/screenshot-desktop.png",
-      "sizes": "1280x720",
-      "type": "image/png",
-      "form_factor": "wide",
-      "label": "Mainstream Tinting Homepage"
-    },
-    {
-      "src": "/screenshot-mobile.png", 
-      "sizes": "375x667",
-      "type": "image/png",
-      "form_factor": "narrow",
-      "label": "Mobile View"
-    }
-  ],
   "shortcuts": [
     {
       "name": "Get Quote",

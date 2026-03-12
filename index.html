@@ -52,14 +52,16 @@
         <link rel="canonical" href="https://www.mainstream-tinting.com/" />
 
         <link rel="preload" as="image" href="m-logo-new.webp" type="image/webp" fetchpriority="high" />
+        <!-- Hero blend: real tinting photo reads through the gradient (LCP-friendly) -->
+        <link rel="preload" as="image" href="restvroom.webp" type="image/webp" fetchpriority="high" />
 
         <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/favicon-96x96.png" />
         <link rel="manifest" href="/site.webmanifest" />
-        <link href="./style.css?v=2.1" rel="stylesheet" />
-        <link rel="preload" href="./main.js?v=2.8" as="script" />
+        <link href="./style.css?v=2.5" rel="stylesheet" />
+        <link rel="preload" href="./main.js?v=3.1" as="script" />
         
         <!-- Critical CSS optimization -->
         <style id="critical-css">
@@ -476,7 +478,7 @@
         </style>
 
         <!-- Load main.js FIRST (synchronously) to register data BEFORE Alpine loads -->
-        <script src="main.js?v=2.8"></script>
+        <script src="main.js?v=3.1"></script>
         <!-- Register FAQ data for Alpine -->
         <script>
             window.indexFAQs = [
@@ -525,7 +527,7 @@
         <link rel="preload" href="https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA.woff2" as="font" type="font/woff2" crossorigin />
         
         <!-- Advanced Performance Hints -->
-        <link rel="modulepreload" href="./main.js?v=2.8" />
+        <link rel="modulepreload" href="./main.js?v=3.1" />
         <link rel="prefetch" href="./residential.html" />
         <link rel="prefetch" href="./commercial.html" />
         <link rel="prefetch" href="./gallery.html" />
@@ -539,7 +541,7 @@
         <link rel="dns-prefetch" href="https://analytics.google.com" />
         
         <!-- Critical Resource Preloading -->
-        <link rel="preload" href="./style.css?v=2.1" as="style" />
+        <link rel="preload" href="./style.css?v=2.5" as="style" />
         <link rel="preload" href="./SchoolBackgroundPic.webp" as="image" type="image/webp" fetchpriority="high" />
         <link
             href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
@@ -1314,30 +1316,57 @@
                 id="hero-header"
                 class="hero-gradient-bg-home relative flex h-[60vh] min-h-[400px] items-center justify-center overflow-hidden sm:min-h-[450px] md:min-h-[550px]"
             >
+                <!-- Gallery photo blended into gradient: instant "this is tinting" without losing the animated look -->
+                <div
+                    class="pointer-events-none absolute inset-0 z-0 overflow-hidden"
+                    aria-hidden="true"
+                >
+                    <picture class="absolute inset-0 block h-full w-full">
+                        <source srcset="restvroom.webp" type="image/webp" />
+                        <img
+                            src="restvroom.jpeg"
+                            alt=""
+                            width="1200"
+                            height="1600"
+                            class="hero-home-blend-photo h-full w-full object-cover object-center opacity-[0.38] mix-blend-soft-light"
+                            style="min-height: 100%; min-width: 100%; transform: scale(1.06);"
+                            loading="eager"
+                            fetchpriority="high"
+                            decoding="async"
+                        />
+                    </picture>
+                </div>
+
+                <!-- Scrim: darker on mobile so title/badge stay readable over photo; lighter from sm up -->
+                <div
+                    class="hero-home-scrim pointer-events-none absolute inset-0 z-[5] bg-gradient-to-b from-black/65 via-black/50 to-black/65 sm:from-black/45 sm:via-black/25 sm:to-black/50"
+                    aria-hidden="true"
+                ></div>
 
                 <div class="relative z-20 max-w-5xl px-4 text-center sm:px-6 lg:px-8 pt-8 sm:pt-0">
                     <div
-                        class="hero-badge mb-4 inline-flex items-center gap-2 rounded-full px-3 py-1.5 sm:mb-6"
+                        class="hero-badge mb-4 inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/60 px-3 py-1.5 shadow-lg backdrop-blur-sm sm:mb-6 sm:bg-black/50 sm:border-white/15"
                     >
-                        <span class="text-xs font-bold uppercase tracking-wider text-gray-200"
+                        <span class="text-xs font-bold uppercase tracking-wider text-white"
                             >Serving VA, DC & MD</span
                         >
                     </div>
                     <h1
-                        class="hero-title-neon mb-4 font-display text-2xl font-bold leading-tight text-white sm:mb-5 sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl"
+                        class="hero-title-neon mb-4 font-display text-2xl font-bold leading-tight text-white sm:mb-5 sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl [text-shadow:0_2px_16px_rgba(0,0,0,0.75),0_1px_4px_rgba(0,0,0,0.9)]"
                     >
                         Premium Window Tinting.<br class="hidden sm:block" />
-                        <span class="hero-title-neon-pink text-brand-pink">Owner-Installed.</span>
+                        <span class="hero-title-neon-pink text-brand-pink [text-shadow:0_2px_20px_rgba(0,0,0,0.6),0_0_24px_rgba(255,64,129,0.35)]">Owner-Installed.</span>
                     </h1>
                     <div class="mb-4 flex flex-col justify-center gap-3 sm:mb-5 sm:flex-row sm:gap-4 lg:hidden">
                         <a
                             href="residential.html"
-                            class="group relative rounded-xl border border-brand-pink/50 bg-brand-pink/10 px-5 py-2.5 text-sm font-bold text-white sm:px-6 sm:py-3 sm:text-base min-h-[44px] flex items-center justify-center"
+                            aria-label="View residential window tinting solutions"
+                            class="group relative rounded-xl border border-brand-pink/60 bg-gray-900/90 px-5 py-2.5 text-sm font-bold text-white shadow-lg backdrop-blur-sm sm:px-6 sm:py-3 sm:text-base min-h-[44px] flex items-center justify-center transition-opacity hover:opacity-95"
                         >
                             <div class="relative flex items-center justify-center gap-2">
                                 <span>Residential Solutions</span>
                                 <svg
-                                    class="h-4 w-4 text-brand-pink"
+                                    class="h-4 w-4 shrink-0 text-brand-pink"
                                     fill="none"
                                     viewBox="0 0 24 24"
                                     stroke="currentColor"
@@ -1354,12 +1383,12 @@
                         <a
                             href="commercial.html"
                             aria-label="View commercial window tinting solutions"
-                            class="group relative rounded-xl bg-white px-5 py-2.5 text-sm font-bold text-gray-900 sm:px-6 sm:py-3 sm:text-base min-h-[44px] flex items-center justify-center"
+                            class="group relative rounded-xl bg-white px-5 py-2.5 text-sm font-bold text-gray-900 shadow-lg sm:px-6 sm:py-3 sm:text-base min-h-[44px] flex items-center justify-center transition-opacity hover:opacity-95"
                         >
                             <div class="relative flex items-center justify-center gap-2">
                                 <span>Commercial Solutions</span>
                                 <svg
-                                    class="h-4 w-4 text-brand-pink"
+                                    class="h-4 w-4 shrink-0 text-brand-pink"
                                     fill="none"
                                     viewBox="0 0 24 24"
                                     stroke="currentColor"
@@ -1370,6 +1399,33 @@
                                         stroke-width="2"
                                         d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
                                     />
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Desktop hero: same paths as mobile (was missing on large screens) -->
+                    <div class="mb-4 hidden flex-col justify-center gap-3 sm:mb-5 sm:flex-row sm:gap-4 lg:flex">
+                        <a
+                            href="residential.html"
+                            aria-label="View residential window tinting solutions"
+                            class="group relative rounded-xl border border-brand-pink/60 bg-gray-900/90 px-5 py-2.5 text-sm font-bold text-white shadow-lg backdrop-blur-sm sm:px-6 sm:py-3 sm:text-base min-h-[44px] flex items-center justify-center transition-opacity hover:opacity-95"
+                        >
+                            <div class="relative flex items-center justify-center gap-2">
+                                <span>Residential Solutions</span>
+                                <svg class="h-4 w-4 shrink-0 text-brand-pink" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                                </svg>
+                            </div>
+                        </a>
+                        <a
+                            href="commercial.html"
+                            aria-label="View commercial window tinting solutions"
+                            class="group relative rounded-xl bg-white px-5 py-2.5 text-sm font-bold text-gray-900 shadow-lg sm:px-6 sm:py-3 sm:text-base min-h-[44px] flex items-center justify-center transition-opacity hover:opacity-95"
+                        >
+                            <div class="relative flex items-center justify-center gap-2">
+                                <span>Commercial Solutions</span>
+                                <svg class="h-4 w-4 shrink-0 text-brand-pink" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                                 </svg>
                             </div>
                         </a>

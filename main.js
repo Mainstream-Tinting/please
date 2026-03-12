@@ -6,7 +6,7 @@
 
     // Production mode: disable console in production (set to false for debugging)
     const DEBUG = false;
-    
+
     // Global Error Boundary with Crash Detection & Recovery (Production-Ready)
     const errorBoundary = {
         errors: [],
@@ -2474,21 +2474,24 @@
             },
             {
                 webp: "comvt.webp",
-                jpeg: "comvt.jpeg",
+                // No comvt.jpeg on disk—use webp as img fallback so gallery never 404s
+                jpeg: "comvt.webp",
                 title: "Custom Decorative",
                 description: "Opaque decorative film precision-cut to frame a brand logo.",
                 alt: "Virginia Tech logo applied to a glass door using custom cut decorative film",
             },
             {
                 webp: "comoffice.webp",
-                jpeg: "comoffice.jpeg",
+                // No comoffice.jpeg on disk—webp only
+                jpeg: "comoffice.webp",
                 title: "Decorative & Frosted",
                 description: "Frosted bands create visual privacy for glass-walled offices.",
                 alt: "Modern office with glass walls covered in frosted decorative privacy film",
             },
             {
                 webp: "com48.webp",
-                jpeg: "com48.jpeg",
+                // No com48.jpeg on disk—webp only
+                jpeg: "com48.webp",
                 title: "Decorative & Frosted",
                 description: '"Dusted Crystal" bands for conference room privacy.',
                 alt: "Glass conference room with horizontal bands of frosted crystal decorative privacy film",
@@ -2572,20 +2575,37 @@
                         }
                     },
 
+        // Gallery modal scroll lock
         disableBodyScroll() {
                         try {
-                            if (document.body) {
-            document.body.style.overflow = "hidden";
+                            // Only lock scroll on small screens; desktop should keep normal scrolling
+                            if (window.innerWidth < 1024) {
+                                if (document.body) {
+                                    document.body.classList.add('overflow-hidden');
+                                }
+                                if (document.documentElement) {
+                                    document.documentElement.classList.add('overflow-hidden');
+                                }
                             }
                         } catch (e) {
                             log.warn('Disable scroll error:', e);
                         }
         },
-
+        
         enableBodyScroll() {
                         try {
                             if (document.body) {
-            document.body.style.overflow = "";
+                                document.body.classList.remove('overflow-hidden');
+                                // Safety: clear any lingering inline overflow from previous runs
+                                if (document.body.style.overflow === 'hidden') {
+                                    document.body.style.overflow = '';
+                                }
+                            }
+                            if (document.documentElement) {
+                                document.documentElement.classList.remove('overflow-hidden');
+                                if (document.documentElement.style.overflow === 'hidden') {
+                                    document.documentElement.style.overflow = '';
+                                }
                             }
                         } catch (e) {
                             log.warn('Enable scroll error:', e);
@@ -4182,9 +4202,11 @@
                         mobileCloseIcon.removeAttribute('x-cloak');
                     }
                     
-                    // Lock body scroll
-                    document.body.style.setProperty('overflow', 'hidden', 'important');
-                    document.documentElement.style.setProperty('overflow', 'hidden', 'important');
+                    // Lock body scroll on mobile/tablet only
+                    if (window.innerWidth < 1024) {
+                        document.body.style.setProperty('overflow', 'hidden', 'important');
+                        document.documentElement.style.setProperty('overflow', 'hidden', 'important');
+                    }
                     
                     mobileButton.setAttribute('aria-expanded', 'true');
                     

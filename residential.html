@@ -55,7 +55,7 @@
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/favicon-96x96.png" />
         <link rel="manifest" href="/site.webmanifest" />
-        <link href="./style.css?v=2.1" rel="stylesheet" />
+        <link href="./style.css?v=2.5" rel="stylesheet" />
         
         <!-- CRITICAL: Override ALL hiding mechanisms for dropdown -->
         <style>
@@ -210,7 +210,7 @@
         </style>
 
         <!-- Load main.js FIRST (synchronously) to register data BEFORE Alpine loads -->
-        <script src="main.js?v=2.6"></script>
+        <script src="main.js?v=3.1"></script>
         <!-- Load collapse plugin -->
         <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
         <!-- Load Alpine.js core LAST -->
@@ -220,7 +220,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link rel="dns-prefetch" href="https://www.google.com" />
         <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
-        <link rel="preload" href="main.js?v=2.6" as="script" fetchpriority="high" />
+        <link rel="preload" href="main.js?v=3.1" as="script" fetchpriority="high" />
         <link
             href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
             rel="stylesheet"
@@ -860,7 +860,6 @@
         <header
             class="hero-gradient-bg relative flex items-center justify-center overflow-hidden pb-8 pt-20 sm:pb-10 md:pb-12 md:pt-24 lg:pb-14"
         >
-
             <div class="relative z-20 mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
                 <h1
                     class="hero-title-neon mb-3 pt-4 font-display text-2xl font-extrabold leading-tight text-white sm:mb-4 sm:pt-6 sm:text-3xl md:pt-8 md:text-4xl lg:text-5xl"
@@ -1201,16 +1200,9 @@
                         <div class="relative aspect-[4/5]">
                             <picture>
                                 <source srcset="restvroom.webp" type="image/webp" />
-                                <img loading="lazy"
-                                    src="restvroom.jpeg"
-                                    alt="Living room with ceramic solar control film, 50% visible light transmission"
-                                    class="h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-90"
-                                    decoding="async"
-                                />
+                                <img loading="lazy" src="restvroom.jpeg" alt="Living room with ceramic solar control film, 50% visible light transmission" class="h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-90" decoding="async" />
                             </picture>
-                            <div
-                                class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent p-2.5 sm:p-3"
-                            >
+                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent p-2.5 sm:p-3">
                                 <h3 class="mb-0.5 text-xs font-bold text-white sm:text-sm">Ceramic Solar Control</h3>
                                 <p class="text-[10px] text-gray-300 sm:text-xs leading-tight">50% VLT, blocks 45-70% solar heat</p>
                             </div>
@@ -1220,16 +1212,9 @@
                         <div class="relative aspect-[4/5]">
                             <picture>
                                 <source srcset="Res70.webp" type="image/webp" />
-                                <img loading="lazy"
-                                    src="Res70.jpeg"
-                                    alt="Bright room with clear UV protection film, maintains natural light while blocking 99.9% UV rays"
-                                    class="h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-90"
-                                    decoding="async"
-                                />
+                                <img loading="lazy" src="Res70.jpeg" alt="Bright room with clear UV protection film" class="h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-90" decoding="async" />
                             </picture>
-                            <div
-                                class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent p-2.5 sm:p-3"
-                            >
+                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent p-2.5 sm:p-3">
                                 <h3 class="mb-0.5 text-xs font-bold text-white sm:text-sm">Clear UV Protection</h3>
                                 <p class="text-[10px] text-gray-300 sm:text-xs leading-tight">70-80% VLT, blocks 99.9% UV rays</p>
                             </div>
@@ -1239,16 +1224,9 @@
                         <div class="relative aspect-[4/5]">
                             <picture>
                                 <source srcset="resbath.webp" type="image/webp" />
-                                <img loading="lazy"
-                                    src="resbath.jpeg"
-                                    alt="Bathroom with decorative frosted privacy film providing 24/7 privacy"
-                                    class="h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-90"
-                                    decoding="async"
-                                />
+                                <img loading="lazy" src="resbath.jpeg" alt="Bathroom with decorative frosted privacy film" class="h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-90" decoding="async" />
                             </picture>
-                            <div
-                                class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent p-2.5 sm:p-3"
-                            >
+                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent p-2.5 sm:p-3">
                                 <h3 class="mb-0.5 text-xs font-bold text-white sm:text-sm">Decorative & Frosted</h3>
                                 <p class="text-[10px] text-gray-300 sm:text-xs leading-tight">24/7 privacy, diffused light</p>
                             </div>
@@ -1258,16 +1236,9 @@
                         <div class="relative aspect-[4/5]">
                             <picture>
                                 <source srcset="ResBackground.webp" type="image/webp" />
-                                <img loading="lazy"
-                                    src="ResBackground.jpeg"
-                                    alt="Interior with ceramic solar control film, 60% visible light transmission"
-                                    class="h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-90"
-                                    decoding="async"
-                                />
+                                <img loading="lazy" src="ResBackground.jpeg" alt="Interior with ceramic solar control film, 60% VLT" class="h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-90" decoding="async" />
                             </picture>
-                            <div
-                                class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent p-2.5 sm:p-3"
-                            >
+                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent p-2.5 sm:p-3">
                                 <h3 class="mb-0.5 text-xs font-bold text-white sm:text-sm">Ceramic Solar Control</h3>
                                 <p class="text-[10px] text-gray-300 sm:text-xs leading-tight">60% VLT, reduces cooling costs</p>
                             </div>
