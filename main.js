@@ -2928,15 +2928,8 @@
                                 this.closeModal();
                                 return;
                             }
-                            
-                            // Horizontal swipe for navigation (only if vertical swipe is minimal)
-                            if (absDiffX > 75 && absDiffY < 50) {
-                                if (diffX > 75) {
-                                    this.nextModalImage();
-                                } else if (diffX < -75) {
-                                    this.prevModalImage();
-                                }
-                            }
+                            // Intentionally do NOT navigate with horizontal swipes in the zoomed viewer.
+                            // Users should only be able to close out of the lightbox.
                         } catch (err) {
                             log.warn('Touch end error:', err);
                         }

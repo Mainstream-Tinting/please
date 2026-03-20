@@ -51,7 +51,7 @@
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/favicon-96x96.png" />
         <link rel="manifest" href="/site.webmanifest" />
-        <link href="./style.css?v=2.5" rel="stylesheet" />
+        <link href="./style.css?v=2.9" rel="stylesheet" />
         
         <!-- CRITICAL: Override ALL hiding mechanisms for dropdown -->
         <style>
@@ -1168,8 +1168,7 @@
                     x-show="isModalOpen && !isVideoModal"
                     x-ref="modal"
                     @keydown.escape.window="closeModal()"
-                    @keydown.arrow-right.window="nextModalImage()"
-                    @keydown.arrow-left.window="prevModalImage()"
+                    @click.self="closeModal()"
                     x-transition:enter="transition ease-out duration-150"
                     x-transition:enter-start="opacity-0"
                     x-transition:enter-end="opacity-100"
@@ -1189,7 +1188,7 @@
                             @touchstart="handleTouchStart"
                             @touchmove="handleTouchMove"
                             @touchend="handleTouchEnd"
-                            class="relative flex max-h-full w-full max-w-7xl flex-col items-center justify-center px-3 sm:px-6 md:px-12 lg:px-20 pb-20 md:pb-0"
+                            class="relative flex max-h-full w-full max-w-7xl flex-col items-center justify-center px-3 sm:px-6 md:px-12 lg:px-20 pb-6 md:pb-0"
                         >
                             <!-- Main Image -->
                             <div class="relative w-full max-w-full flex items-center justify-center">
@@ -1259,42 +1258,6 @@
                             </div>
                         </div>
 
-                        <!-- Previous Button - Desktop (left side) -->
-                        <button
-                            @click="prevModalImage()"
-                            aria-label="Previous image"
-                            class="hidden md:flex min-h-[44px] absolute left-4 top-1/2 z-50 -translate-y-1/2 rounded-full border border-white/20 bg-black/70 backdrop-blur-sm p-3 text-white shadow-2xl transition-[background-color,border-color] duration-200 hover:bg-black/80 hover:border-gray-400/40"
-                            @click.stop
-                        >
-                            <svg
-                                class="h-6 w-6"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                                stroke-width="2.5"
-                            >
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
-                            </svg>
-                        </button>
-
-                        <!-- Next Button - Desktop (right side) -->
-                        <button
-                            @click="nextModalImage()"
-                            aria-label="Next image"
-                            class="hidden md:flex min-h-[44px] absolute right-4 top-1/2 z-50 -translate-y-1/2 rounded-full border border-white/20 bg-black/70 backdrop-blur-sm p-3 text-white shadow-2xl transition-[background-color,border-color] duration-200 hover:bg-black/80 hover:border-gray-400/40"
-                            @click.stop
-                        >
-                            <svg
-                                class="h-6 w-6"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                                stroke-width="2.5"
-                            >
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-                            </svg>
-                        </button>
-
                         <!-- Close Button - Desktop (top-right) -->
                         <button
                             @click="closeModal()"
@@ -1342,8 +1305,7 @@
                     x-show="isVideoModal"
                     x-ref="videoModal"
                     @keydown.escape.window="closeVideoModal()"
-                    @keydown.arrow-right.window="nextVideo()"
-                    @keydown.arrow-left.window="prevVideo()"
+                    @click.self="closeVideoModal()"
                     x-transition:enter="transition ease-out duration-150"
                     x-transition:enter-start="opacity-0"
                     x-transition:enter-end="opacity-100"
@@ -1364,7 +1326,7 @@
                             @touchmove="handleVideoTouchMove"
                             @touchend="handleVideoTouchEnd"
                             @click="forcePlayVideo($refs.videoPlayerMobile); forcePlayVideo($refs.videoPlayerDesktop);"
-                            class="relative flex w-full items-center justify-center px-2 sm:px-3 md:px-12 lg:px-20 pb-20 md:pb-0"
+                            class="relative flex w-full items-center justify-center px-2 sm:px-3 md:px-12 lg:px-20 pb-6 md:pb-0"
                         >
                             <!-- Mobile: Full-size video display -->
                             <div class="md:hidden w-full flex items-center justify-center">
@@ -1523,42 +1485,6 @@
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Previous Button - Desktop (left side) -->
-                        <button
-                            @click="prevVideo()"
-                            aria-label="Previous video"
-                            class="hidden md:flex min-h-[44px] absolute left-4 top-1/2 z-50 -translate-y-1/2 rounded-full border border-white/20 bg-black/70 backdrop-blur-sm p-3 text-white shadow-2xl transition-[background-color,border-color] duration-200 hover:bg-black/80 hover:border-gray-400/40"
-                            @click.stop
-                        >
-                            <svg
-                                class="h-6 w-6"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                                stroke-width="2.5"
-                            >
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
-                            </svg>
-                        </button>
-
-                        <!-- Next Button - Desktop (right side) -->
-                        <button
-                            @click="nextVideo()"
-                            aria-label="Next video"
-                            class="hidden md:flex min-h-[44px] absolute right-4 top-1/2 z-50 -translate-y-1/2 rounded-full border border-white/20 bg-black/70 backdrop-blur-sm p-3 text-white shadow-2xl transition-[background-color,border-color] duration-200 hover:bg-black/80 hover:border-gray-400/40"
-                            @click.stop
-                        >
-                            <svg
-                                class="h-6 w-6"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                                stroke-width="2.5"
-                            >
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-                            </svg>
-                        </button>
 
                         <!-- Close Button - Desktop (top-right) -->
                         <button

@@ -1,7 +1,7 @@
 // Enhanced Service Worker for Mainstream Tinting
 // Provides advanced offline functionality and intelligent caching
 
-const CACHE_NAME = 'mainstream-tinting-v1.3';
+const CACHE_NAME = 'mainstream-tinting-v1.5';
 const OFFLINE_PAGE = '/offline.html';
 const CACHE_STRATEGY = {
     CACHE_FIRST: 'cache-first',
@@ -20,6 +20,7 @@ const CACHE_FILES = [
     '/about.html',
     '/areas-we-serve.html',
     '/removal.html',
+    '/offline.html',
     '/style.css',
     '/main.js',
     '/m-logo-new.webp',
@@ -117,9 +118,24 @@ async function handleRequest(request, strategy) {
     }
 }
 
+// For CSS/JS we use a normalized cache key that strips `?v=...` query strings.
+// This prevents offline breakage when the HTML uses cache-busting query params.
+function normalizeCacheKey(request) {
+    try {
+        const url = new URL(request.url);
+        if (url.pathname.endsWith('.css') || url.pathname.endsWith('.js')) {
+            return new Request(url.origin + url.pathname);
+        }
+    } catch (e) {
+        // If URL parsing fails, fall back to the original request.
+    }
+    return request;
+}
+
 // Cache first strategy - good for static assets
 async function handleCacheFirst(request, cache) {
-    const cached = await cache.match(request);
+    const cacheKey = normalizeCacheKey(request);
+    const cached = await cache.match(cacheKey);
     if (cached) {
         return cached;
     }
@@ -127,7 +143,7 @@ async function handleCacheFirst(request, cache) {
     try {
         const response = await fetch(request);
         if (response.status === 200) {
-            cache.put(request, response.clone());
+            cache.put(cacheKey, response.clone());
         }
         return response;
     } catch (error) {

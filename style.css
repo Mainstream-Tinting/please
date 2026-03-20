@@ -4,30 +4,41 @@
 /* scroll-fix: desktop — avoid Chrome wheel fighting; mobile keeps touch/overscroll in source block above */
 @media (hover:hover) and (pointer:fine){html,body{-webkit-overflow-scrolling:auto;overscroll-behavior:auto}body{touch-action:auto}}
 
-/* Hero home: photo layer z-0; pseudos z-1 so gradient orbs stay visible over blend */
+/* Hero home: photo z-0 desktop (blend + orbs on top); mobile raises .hero-home-photo-layer so photo sits above orbs */
 .hero-gradient-bg-home::before,.hero-gradient-bg-home::after{z-index:1}
+@media (min-width:640px){#hero-header .hero-home-blend-photo{mix-blend-mode:soft-light}}
 
 /* Subpage headers: photo layer z-0; gradient orbs above photo like index */
 .hero-gradient-bg{position:relative}
 .hero-gradient-bg::before,.hero-gradient-bg::after{z-index:1}
 
-/* Index hero: mobile readability — scrim already darker via Tailwind; photo dimmer + text-shadow restored
+/* Index hero: mobile readability — photo dimmer + text-shadow restored
    (body:has(.hero-gradient-bg-home) sets text-shadow:none on children; hero copy needs shadow back) */
 @media (max-width:639px){
-  #hero-header .hero-home-blend-photo{opacity:.26!important}
-  #hero-header .hero-home-scrim{background:linear-gradient(to bottom,rgba(0,0,0,.72) 0%,rgba(0,0,0,.58) 45%,rgba(0,0,0,.72) 100%)!important}
-  #hero-header h1.hero-title-neon,
-  #hero-header h1 .hero-title-neon-pink{
-    text-shadow:0 2px 14px rgba(0,0,0,.95),0 4px 28px rgba(0,0,0,.85),0 0 2px rgba(0,0,0,1)!important;
+  /* Photo was z-0 while orbs are z-1 — orbs were covering the image on phones */
+  #hero-header .hero-home-photo-layer{z-index:2!important}
+  /* Make the photo render consistently on mobile (disable blend-mode quirks) */
+  #hero-header .hero-home-blend-photo{opacity:.58!important;mix-blend-mode:normal!important}
+  #hero-header .hero-home-scrim{background:linear-gradient(to bottom,rgba(0,0,0,.38) 0%,rgba(0,0,0,.18) 45%,rgba(0,0,0,.42) 100%)!important}
+
+  #hero-header h1.hero-title-neon{
+    color:rgba(255,255,255,.98)!important;
+    text-shadow:0 2px 14px rgba(0,0,0,.82),0 1px 4px rgba(0,0,0,.95)!important;
     filter:none!important;
   }
-  #hero-header .hero-badge{background-color:rgba(0,0,0,.72)!important;border-color:rgba(255,255,255,.25)!important}
+  #hero-header h1.hero-title-neon .hero-title-neon-pink{
+    color:rgba(255,92,156,.98)!important;
+    text-shadow:0 2px 16px rgba(0,0,0,.78),0 0 12px rgba(255,64,129,.32)!important;
+  }
+
+  #hero-header .hero-badge{background-color:rgba(0,0,0,.50)!important;border-color:rgba(255,255,255,.15)!important}
 }
 /* Slightly stronger shadow on narrow tablets too */
 @media (min-width:640px) and (max-width:767px){
+  /* Keep desktop/iPad behavior (no forced shadow) */
   #hero-header h1.hero-title-neon,
   #hero-header h1 .hero-title-neon-pink{
-    text-shadow:0 2px 12px rgba(0,0,0,.9),0 4px 20px rgba(0,0,0,.75)!important;
+    text-shadow:none!important;
     filter:none!important;
   }
 }
