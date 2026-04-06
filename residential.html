@@ -198,16 +198,6 @@
                 background-position: 0% 0% !important;
                 background-size: 100% 100% !important;
             }
-            
-            /* Force center benefits text - Mobile alignment fix */
-            .text-center .text-xs.text-gray-400 {
-                text-align: center !important;
-                display: block !important;
-                width: 100% !important;
-                margin: 0 auto !important;
-                justify-self: center !important;
-                align-self: center !important;
-            }
         </style>
 
         <!-- Load main.js FIRST (synchronously) to register data BEFORE Alpine loads -->
@@ -891,7 +881,7 @@
         </header>
 
         <main id="main-content" class="scroll-mt-32 container mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Power Block Section - Video Left / Clean Home Promise Right (IMMEDIATELY AFTER HERO) -->
+            <!-- Video left / pricing right (matches removal.html pattern) -->
             <section class="mx-auto max-w-7xl border-b border-gray-800/50 -mt-8 py-6 sm:py-8 md:-mt-12 md:py-12 lg:-mt-16 lg:py-16">
                 <div class="grid items-center gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-10">
                     <div class="group relative">
@@ -951,234 +941,199 @@
 
                     <div class="pl-0 lg:pl-8">
                         <div
-                            class="mb-3 inline-flex items-center gap-2 rounded-full border border-neon-blue/20 bg-neon-blue/10 px-3 py-1 sm:mb-3"
+                            class="mb-3 inline-flex items-center gap-2 rounded-full border border-[#FF4081]/20 bg-[#FF4081]/10 px-3 py-1 sm:mb-3"
                         >
-                            <span class="text-xs font-bold uppercase tracking-wider text-neon-blue"
-                                >The Clean Home Promise</span
+                            <span class="text-xs font-bold uppercase tracking-wider text-[#FF4081]"
+                                >Transparent Pricing</span
                             >
                         </div>
                         <h2
                             class="mb-4 font-display text-xl font-bold leading-tight text-white sm:mb-4 sm:text-2xl md:text-3xl"
                         >
-                            I Treat Your Home <br class="hidden sm:block" />Like My Own.
+                            Fair Pricing. <br class="hidden sm:block" />No Surprises.
                         </h2>
 
-                        <div class="mb-5 rounded-lg border border-neon-blue/30 bg-neon-blue/10 p-5 sm:mb-6 sm:p-6 hover:border-gray-700/60">
-                            <p class="text-sm leading-relaxed text-gray-200 sm:text-base">
-                                <strong class="text-white">Professional Service:</strong> Complete floor and surface protection during installation. I take all trash with me and leave windows cleaner than when I arrived. My work is backed by a manufacturer's limited lifetime warranty—if it bubbles or peels, I fix it.
+                        <div class="mb-5 rounded-lg border border-[#FF4081]/30 bg-[#FF4081]/10 p-5 sm:mb-6 sm:p-6 hover:border-gray-700/60">
+                            <div class="mb-4 space-y-3 sm:mb-5 sm:space-y-4">
+                                <div class="flex items-center justify-between border-b border-[#FF4081]/20 pb-3">
+                                    <span class="text-sm font-semibold text-white sm:text-base">Typical rate</span>
+                                    <span class="text-xl font-bold text-[#FF4081] sm:text-2xl">$8-15/sq ft</span>
+                                </div>
+                                <div class="flex items-center justify-between border-b border-[#FF4081]/20 pb-3">
+                                    <span class="text-sm font-semibold text-white sm:text-base">Most projects</span>
+                                    <span class="text-xl font-bold text-[#FF4081] sm:text-2xl">$800-$3,500</span>
+                                </div>
+                            </div>
+                            <p class="text-xs leading-relaxed text-gray-200 sm:text-sm">
+                                <strong class="text-white">Note:</strong> Final price depends on how many windows you have and the scope of work. I’ll give you a clear quote after we talk through your home.
                             </p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Key Benefits Section -->
-            <section id="benefits" class="scroll-mt-32 mx-auto max-w-7xl border-b border-gray-800/50 py-6 sm:py-8 md:py-10">
+            <!-- Process (single trust narrative—matches removal page rhythm) -->
+            <section id="process" class="scroll-mt-32 mx-auto max-w-7xl border-b border-gray-800/50 py-6 sm:py-8 md:py-10">
                 <div class="mb-6 text-center sm:mb-8">
                     <h2
-                        class="mb-2 font-display text-xl font-bold leading-tight text-white sm:mb-3 sm:text-2xl md:text-3xl"
+                        class="mb-3 font-display text-xl font-bold leading-tight text-white sm:mb-4 sm:text-2xl md:text-3xl"
                     >
-                        Three Powerful Benefits
+                        How Your Home Install Goes
                     </h2>
                     <p class="mx-auto max-w-2xl px-2 text-sm text-gray-300 sm:text-base">
-                        Feel the difference in your home immediately.
+                        Four steps from first visit to finished glass—clean, quiet, and done by the owner.
                     </p>
                 </div>
-                <div class="mx-auto grid max-w-5xl gap-4 sm:gap-6 md:grid-cols-3">
-                    <div class="group rounded-lg border border-gray-800/50 frosted-glass-light p-6 text-center transition-all duration-300 hover:border-[#FF4081]/70">
-                        <div class="mb-2 text-3xl font-bold text-[#FF4081] ">Energy</div>
-                        <h3 class="mb-2 text-lg font-bold text-white">Reduce Cooling Costs by up to 30%</h3>
-                        <p class="mb-3 text-sm text-gray-300">
-                            Block up to 85% of solar heat gain. Lower A/C usage and eliminate hot spots.
-                        </p>
-                        <div class="text-xs text-gray-400 w-full" style="text-align: center !important; display: block !important; margin: 0 auto !important;">
-                            <strong class="text-white">ROI:</strong> Typical payback through energy savings
+                <div class="mx-auto max-w-4xl">
+                    <div class="grid gap-3 sm:gap-4 md:grid-cols-2">
+                        <div class="group rounded-xl border border-gray-800/50 frosted-glass-light p-4 transition-all duration-300 hover:border-[#FF4081]/70">
+                            <div class="mb-3 flex h-10 w-10 items-center justify-center rounded-full border border-[#FF4081]/30 bg-[#FF4081]/20">
+                                <span class="font-bold text-[#FF4081]">1</span>
+                            </div>
+                            <h3 class="mb-2 text-base font-bold text-white">Consult &amp; measure</h3>
+                            <p class="text-sm text-gray-300">
+                                I come to you, walk the windows, and give a clear quote—no pressure, no surprises.
+                            </p>
                         </div>
-                    </div>
-                    <div class="group rounded-lg border border-gray-800/50 frosted-glass-light p-6 text-center transition-all duration-300 hover:border-[#FF4081]/70">
-                        <div class="mb-2 text-3xl font-bold text-[#00F0FF] ">Comfort</div>
-                        <h3 class="mb-2 text-lg font-bold text-white">Eliminate Harsh Glare</h3>
-                        <p class="mb-3 text-sm text-gray-300">
-                            Reduce glare by up to 95% while maintaining your beautiful view.
-                        </p>
-                        <div class="text-xs text-gray-400 w-full" style="text-align: center !important; display: block !important; margin: 0 auto !important;">
-                            <strong class="text-white">Result:</strong> No more closing blinds during the day
+                        <div class="group rounded-xl border border-gray-800/50 frosted-glass-light p-4 transition-all duration-300 hover:border-[#FF4081]/70">
+                            <div class="mb-3 flex h-10 w-10 items-center justify-center rounded-full border border-[#FF4081]/30 bg-[#FF4081]/20">
+                                <span class="font-bold text-[#FF4081]">2</span>
+                            </div>
+                            <h3 class="mb-2 text-base font-bold text-white">Prep &amp; protect</h3>
+                            <p class="text-sm text-gray-300">
+                                Floors and furniture covered; I work neatly room by room and haul debris away.
+                            </p>
                         </div>
-                    </div>
-                    <div class="group rounded-lg border border-gray-800/50 frosted-glass-light p-6 text-center transition-all duration-300 hover:border-[#FF4081]/70">
-                        <div class="mb-2 text-3xl font-bold text-[#FF4081] ">Protection</div>
-                        <h3 class="mb-2 text-lg font-bold text-white">Protect Your Investments</h3>
-                        <p class="mb-3 text-sm text-gray-300">
-                            Block 99.9% of UV rays that fade furniture, artwork, and flooring.
-                        </p>
-                        <div class="text-xs text-gray-400 w-full" style="text-align: center !important; display: block !important; margin: 0 auto !important;">
-                            <strong class="text-white">Benefit:</strong> Preserve expensive items longer
+                        <div class="group rounded-xl border border-gray-800/50 frosted-glass-light p-4 transition-all duration-300 hover:border-[#FF4081]/70">
+                            <div class="mb-3 flex h-10 w-10 items-center justify-center rounded-full border border-[#FF4081]/30 bg-[#FF4081]/20">
+                                <span class="font-bold text-[#FF4081]">3</span>
+                            </div>
+                            <h3 class="mb-2 text-base font-bold text-white">Owner installation</h3>
+                            <p class="text-sm text-gray-300">
+                                You get me on the glass—Carson—not a crew you've never met.
+                            </p>
+                        </div>
+                        <div class="group rounded-xl border border-gray-800/50 frosted-glass-light p-4 transition-all duration-300 hover:border-[#FF4081]/70">
+                            <div class="mb-3 flex h-10 w-10 items-center justify-center rounded-full border border-[#FF4081]/30 bg-[#FF4081]/20">
+                                <span class="font-bold text-[#FF4081]">4</span>
+                            </div>
+                            <h3 class="mb-2 text-base font-bold text-white">Finish &amp; warranty</h3>
+                            <p class="text-sm text-gray-300">
+                                Windows wiped down, simple care tips, and a manufacturer's limited lifetime warranty—if it bubbles or peels, I fix it.
+                            </p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Detailed Service Information Section -->
+            <!-- Scannable fit only (no repeat of process bullets) -->
             <section id="details" class="scroll-mt-32 mx-auto max-w-7xl border-b border-gray-800/50 py-6 sm:py-8 md:py-10">
                 <div class="mb-6 text-center sm:mb-8">
                     <h2
                         class="mb-3 font-display text-xl font-bold leading-tight text-white sm:mb-4 sm:text-2xl md:text-3xl"
                     >
-                        Residential Solutions & Film Options
-                            </h2>
+                        Typical rooms &amp; glass
+                    </h2>
                     <p class="mx-auto max-w-2xl px-2 text-sm text-gray-300 sm:text-base">
-                        I'll help you find the perfect film for what your home actually needs.
+                        If it is flat glass in your home, we can almost always scope it on the consult.
                     </p>
-                    </div>
-
-                <div class="mx-auto max-w-4xl">
-                    <!-- What's Included & Common Applications -->
-                    <div class="mb-8 grid gap-6 md:grid-cols-2 md:items-start">
-                        <div class="group flex flex-col rounded-xl border border-gray-800/50 frosted-glass-light p-5 transition-all duration-300 hover:border-[#FF4081]/70">
-                            <h3 class="mb-4 min-h-[2rem] text-lg font-bold text-white leading-tight">What's Included</h3>
-                            <ul class="space-y-2 text-sm text-gray-300">
-                                <li class="flex items-start gap-2">
-                                    <svg class="mt-0.5 h-4 w-4 shrink-0 text-[#FF4081]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                    </svg>
-                                    <span>Free on-site consultation & precise measurements</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <svg class="mt-0.5 h-4 w-4 shrink-0 text-[#FF4081]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                    </svg>
-                                    <span>Expert film recommendations based on your goals</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <svg class="mt-0.5 h-4 w-4 shrink-0 text-[#FF4081]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                    </svg>
-                                    <span>Installation by me, Carson (the owner)</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <svg class="mt-0.5 h-4 w-4 shrink-0 text-[#FF4081]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                    </svg>
-                                    <span>Complete protection of your floors and furniture</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <svg class="mt-0.5 h-4 w-4 shrink-0 text-[#FF4081]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                    </svg>
-                                    <span>Manufacturer's limited lifetime warranty</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <svg class="mt-0.5 h-4 w-4 shrink-0 text-[#FF4081]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                    </svg>
-                                    <span>Clear instructions on how to care for your new tint</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="group flex flex-col rounded-xl border border-gray-800/50 frosted-glass-light p-5 transition-all duration-300 hover:border-[#FF4081]/70">
-                            <h3 class="mb-4 min-h-[2rem] text-lg font-bold text-white leading-tight">Common Applications</h3>
-                            <ul class="space-y-2 text-sm text-gray-300">
-                                <li class="flex items-start gap-2">
-                                    <svg class="mt-0.5 h-4 w-4 shrink-0 text-[#FF4081]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                    </svg>
-                                    <span>Living room and family room windows</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <svg class="mt-0.5 h-4 w-4 shrink-0 text-[#FF4081]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                    </svg>
-                                    <span>Bedroom windows for privacy and temperature control</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <svg class="mt-0.5 h-4 w-4 shrink-0 text-[#FF4081]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                    </svg>
-                                    <span>Glass garage doors and entry doors</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <svg class="mt-0.5 h-4 w-4 shrink-0 text-[#FF4081]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                    </svg>
-                                    <span>Sunrooms and three-season rooms</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <svg class="mt-0.5 h-4 w-4 shrink-0 text-[#FF4081]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                    </svg>
-                                    <span>Skylights and roof windows</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <svg class="mt-0.5 h-4 w-4 shrink-0 text-[#FF4081]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                    </svg>
-                                    <span>Bathroom windows for privacy</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Film Options -->
-                    <div class="mb-8 rounded-xl border border-gray-800/50 frosted-glass-light p-5 sm:p-6 transition-all duration-300 hover:border-[#FF4081]/70">
-                        <h3 class="mb-4 text-lg font-bold text-white">Film Options</h3>
-                        <div class="grid gap-4 text-sm text-gray-300 md:grid-cols-2">
-                            <div>
-                                <div class="mb-1 font-semibold text-white">Solar Control Films</div>
-                                <p class="text-xs">
-                                    Ceramic, carbon, or metallic films that block 45-85% of solar heat gain. Reduce
-                                    cooling costs by 15-30% while maintaining your view.
-                                </p>
-                            </div>
-                            <div>
-                                <div class="mb-1 font-semibold text-white">Clear UV Protection</div>
-                                <p class="text-xs">
-                                    Invisible film that blocks 99.9% of UV rays. Preserves furniture and flooring
-                                    without changing appearance or natural light.
-                                </p>
-                            </div>
-                            <div>
-                                <div class="mb-1 font-semibold text-white">Decorative & Frosted</div>
-                                <p class="text-xs">
-                                    Instant privacy with frosted, etched, or custom patterns. 24/7 privacy while
-                                    maintaining natural light diffusion.
-                                </p>
-                            </div>
-                            <div>
-                                <div class="mb-1 font-semibold text-white">Security & Impact</div>
-                                <p class="text-xs">
-                                    Thick films (4-14 mil) that hold broken glass together, preventing injury and
-                                    delaying forced entry. Available in clear or tinted.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-            </section>
-
-            <!-- Pricing CTA Section -->
-            <section class="mx-auto max-w-7xl border-b border-gray-700/50 py-6 sm:py-8 md:py-10 bg-gray-900/80 cta-gradient-bg">
-                <div class="mx-auto max-w-3xl rounded-xl border border-gray-800/50 frosted-glass-light p-6 text-center sm:p-8 transition-all duration-300 hover:border-[#FF4081]/70">
-                    <h3 class="mb-3 text-xl font-bold text-white sm:text-2xl">What Does Home Tinting Cost?</h3>
-                    <p class="mb-6 text-sm text-gray-300">
-                        For most homes, I typically charge <strong class="text-white">$8-15 per square foot</strong>. Most of my residential projects end up being <strong class="text-white">$800-$3,500</strong> depending on the number of windows.
-                        </p>
-                        <a
-                            href="#contact-title"
-                            class="btn-neon-dual group inline-flex items-center gap-2 rounded-lg px-8 py-3 text-sm font-bold shadow-lg transition-opacity duration-200 hover:opacity-90 min-h-[44px]"
+                <div class="mx-auto w-full max-w-3xl px-0 sm:px-2">
+                    <div
+                        class="overflow-hidden rounded-2xl border border-gray-800/50 bg-gradient-to-br from-gray-900/95 to-gray-900/75 p-6 shadow-2xl ring-1 ring-white/[0.04] sm:p-8"
+                    >
+                        <ul
+                            class="grid grid-cols-1 gap-x-10 gap-y-3 text-sm text-gray-300 md:grid-cols-2 md:gap-y-3.5"
                         >
-                            <span class="relative z-10">Get in Touch</span>
-                            <svg class="relative z-10 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                                />
-                            </svg>
-                                                <div
-                            class="absolute inset-0 z-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:animate-[shimmer_1.5s_infinite]"
-                        ></div>
-                        </a>
+                            <li class="flex items-start gap-3">
+                                <svg class="mt-0.5 h-4 w-4 shrink-0 text-[#FF4081]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Living &amp; family rooms</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="mt-0.5 h-4 w-4 shrink-0 text-[#FF4081]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Sunrooms &amp; skylights</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="mt-0.5 h-4 w-4 shrink-0 text-[#FF4081]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Bedrooms</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="mt-0.5 h-4 w-4 shrink-0 text-[#FF4081]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Bath &amp; privacy glass</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="mt-0.5 h-4 w-4 shrink-0 text-[#FF4081]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Glass garage doors</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="mt-0.5 h-4 w-4 shrink-0 text-[#FF4081]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Entry doors &amp; sidelights</span>
+                            </li>
+                        </ul>
+                        <div class="mt-8 border-t border-gray-700/50 pt-8">
+                            <p class="mb-4 text-center text-xs font-medium uppercase tracking-wider text-gray-500">
+                                Next step
+                            </p>
+                            <div class="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4">
+                                <a
+                                    href="tel:7037725185"
+                                    class="group relative flex min-h-[48px] touch-manipulation items-center justify-center gap-2 rounded-xl border border-[#FF4081]/35 bg-[#FF4081]/10 px-5 py-3.5 text-sm font-bold text-white shadow-lg transition-all duration-200 hover:border-[#FF4081]/55 hover:bg-[#FF4081]/15 active:scale-[0.99]"
+                                >
+                                    <svg
+                                        class="h-5 w-5 shrink-0 text-[#FF4081] transition-colors group-hover:text-[#ff6ba3]"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        aria-hidden="true"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
+                                        />
+                                    </svg>
+                                    <span class="sm:hidden">Call now</span>
+                                    <span class="hidden sm:inline">Call (703) 772-5185</span>
+                                </a>
+                                <a
+                                    href="#contact-title"
+                                    class="btn-neon-dual group relative flex min-h-[48px] touch-manipulation items-center justify-center gap-2 overflow-hidden rounded-xl px-5 py-3.5 text-sm font-bold shadow-lg transition-opacity duration-200 hover:opacity-95"
+                                >
+                                    <span class="relative z-10">Leave a note</span>
+                                    <svg
+                                        class="relative z-10 h-4 w-4 shrink-0"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        aria-hidden="true"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
+                                        />
+                                    </svg>
+                                    <div
+                                        class="absolute inset-0 z-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:animate-[shimmer_1.5s_infinite]"
+                                    ></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -1201,11 +1156,11 @@
                         <div class="relative aspect-[4/5]">
                             <picture>
                                 <source srcset="restvroom.webp" type="image/webp" />
-                                <img loading="lazy" src="restvroom.jpeg" alt="Living room with ceramic solar control film, 50% visible light transmission" class="h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-90" decoding="async" />
+                                <img loading="lazy" src="restvroom.jpeg" alt="Living room windows with heat and glare control tint" class="h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-90" decoding="async" />
                             </picture>
                             <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent p-2.5 sm:p-3">
-                                <h3 class="mb-0.5 text-xs font-bold text-white sm:text-sm">Ceramic Solar Control</h3>
-                                <p class="text-[10px] text-gray-300 sm:text-xs leading-tight">50% VLT, blocks 45-70% solar heat</p>
+                                <h3 class="mb-0.5 text-xs font-bold text-white sm:text-sm">Living room</h3>
+                                <p class="text-[10px] text-gray-300 sm:text-xs leading-tight">Heat &amp; glare control, clear view</p>
                             </div>
                         </div>
                     </div>
@@ -1213,11 +1168,11 @@
                         <div class="relative aspect-[4/5]">
                             <picture>
                                 <source srcset="Res70.webp" type="image/webp" />
-                                <img loading="lazy" src="Res70.jpeg" alt="Bright room with clear UV protection film" class="h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-90" decoding="async" />
+                                <img loading="lazy" src="Res70.jpeg" alt="Bright sun-facing room with UV protection tint" class="h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-90" decoding="async" />
                             </picture>
                             <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent p-2.5 sm:p-3">
-                                <h3 class="mb-0.5 text-xs font-bold text-white sm:text-sm">Clear UV Protection</h3>
-                                <p class="text-[10px] text-gray-300 sm:text-xs leading-tight">70-80% VLT, blocks 99.9% UV rays</p>
+                                <h3 class="mb-0.5 text-xs font-bold text-white sm:text-sm">Sun-facing room</h3>
+                                <p class="text-[10px] text-gray-300 sm:text-xs leading-tight">UV protection, natural light preserved</p>
                             </div>
                         </div>
                     </div>
@@ -1225,11 +1180,11 @@
                         <div class="relative aspect-[4/5]">
                             <picture>
                                 <source srcset="resbath.webp" type="image/webp" />
-                                <img loading="lazy" src="resbath.jpeg" alt="Bathroom with decorative frosted privacy film" class="h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-90" decoding="async" />
+                                <img loading="lazy" src="resbath.jpeg" alt="Bathroom window with privacy frosted tint" class="h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-90" decoding="async" />
                             </picture>
                             <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent p-2.5 sm:p-3">
-                                <h3 class="mb-0.5 text-xs font-bold text-white sm:text-sm">Decorative & Frosted</h3>
-                                <p class="text-[10px] text-gray-300 sm:text-xs leading-tight">24/7 privacy, diffused light</p>
+                                <h3 class="mb-0.5 text-xs font-bold text-white sm:text-sm">Bathroom privacy</h3>
+                                <p class="text-[10px] text-gray-300 sm:text-xs leading-tight">Privacy with soft natural light</p>
                             </div>
                         </div>
                     </div>
@@ -1237,11 +1192,11 @@
                         <div class="relative aspect-[4/5]">
                             <picture>
                                 <source srcset="ResBackground.webp" type="image/webp" />
-                                <img loading="lazy" src="ResBackground.jpeg" alt="Interior with ceramic solar control film, 60% VLT" class="h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-90" decoding="async" />
+                                <img loading="lazy" src="ResBackground.jpeg" alt="Home interior with whole-home comfort window tint" class="h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-90" decoding="async" />
                             </picture>
                             <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent p-2.5 sm:p-3">
-                                <h3 class="mb-0.5 text-xs font-bold text-white sm:text-sm">Ceramic Solar Control</h3>
-                                <p class="text-[10px] text-gray-300 sm:text-xs leading-tight">60% VLT, reduces cooling costs</p>
+                                <h3 class="mb-0.5 text-xs font-bold text-white sm:text-sm">Whole-home comfort</h3>
+                                <p class="text-[10px] text-gray-300 sm:text-xs leading-tight">Consistent temperature, less glare</p>
                             </div>
                         </div>
                     </div>
