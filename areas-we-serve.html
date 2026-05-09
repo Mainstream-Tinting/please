@@ -124,6 +124,37 @@
                 background-position: 0% 0% !important;
                 background-size: 100% 100% !important;
             }
+
+            /*
+             * Where I Serve: explicit two-column layout at lg+.
+             * Compiled style.css often omits md:grid-cols-12 / md:col-span-* (not used elsewhere),
+             * which left this section as a single column forever — sidebar stacked below cards.
+             */
+            @media (min-width: 1024px) {
+                #detailed-areas .serve-layout {
+                    grid-template-columns: minmax(0, 1fr) minmax(15rem, 22rem);
+                    align-items: start;
+                }
+                #detailed-areas .serve-sidebar {
+                    margin-top: 0 !important;
+                    position: sticky;
+                    top: 6.5rem;
+                    align-self: start;
+                }
+                #detailed-areas .serve-sidebar > p {
+                    text-align: left;
+                }
+                #detailed-areas .serve-intro-heading {
+                    text-align: left;
+                }
+                #detailed-areas .serve-intro-heading > p {
+                    margin-left: 0;
+                    margin-right: 0;
+                    max-width: none;
+                    padding-left: 0;
+                    padding-right: 0;
+                }
+            }
             
             /* Premium Glassmorphism Form Background - The Coolest Design */
             .form-unique-bg {
@@ -815,18 +846,18 @@
         <main id="main-content" class="scroll-mt-32 container mx-auto px-4 sm:px-6 lg:px-8">
             <section id="detailed-areas" class="scroll-mt-32 border-b border-gray-800/50 py-6 sm:py-8 md:py-10">
                 <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                    <div class="mb-6 text-center sm:mb-8">
-                        <h2
-                            class="mb-3 font-display text-xl font-bold leading-tight text-white sm:mb-4 sm:text-2xl md:text-3xl"
-                        >
-                            Where I Serve
-                        </h2>
-                        <p class="mx-auto max-w-2xl px-2 text-sm text-gray-300">
-                            Browse detailed coverage by region and neighborhood below.
-                        </p>
-                    </div>
-
-                    <div class="space-y-6 sm:space-y-8">
+                    <div class="serve-layout grid grid-cols-1 gap-8 lg:gap-10">
+                        <div class="serve-main min-w-0 space-y-6 sm:space-y-8">
+                            <div class="serve-intro-heading mb-2 text-center sm:mb-4 lg:mb-6">
+                                <h2
+                                    class="mb-3 font-display text-xl font-bold leading-tight text-white sm:mb-4 sm:text-2xl md:text-3xl"
+                                >
+                                    Where I Serve
+                                </h2>
+                                <p class="mx-auto max-w-2xl px-2 text-sm text-gray-300">
+                                    Browse detailed coverage by region and neighborhood below.
+                                </p>
+                            </div>
                         <!-- Washington D.C. Metro (DMV) -->
                         <div class="rounded-2xl border border-gray-800/50 bg-gradient-to-br from-gray-900/90 to-gray-900/70 p-6">
                             <div class="flex items-center gap-4 mb-4">
@@ -958,7 +989,7 @@
                         </p>
                             <a
                                 href="tel:7037725185"
-                                class="btn-neon-dual group inline-flex items-center justify-center rounded-full px-8 py-4 text-base font-bold shadow-xl transition-opacity duration-150 hover:opacity-90 min-h-[44px]"
+                                class="btn-neon-dual group relative inline-flex items-center justify-center overflow-hidden rounded-full px-8 py-4 text-base font-bold shadow-xl transition-opacity duration-150 hover:opacity-90 min-h-[44px]"
                             >
                                 <svg class="relative z-10 mr-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path
@@ -968,12 +999,78 @@
                                         d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                                     />
                                 </svg>
-                                Call: (703) 772-5185
-                                                    <div
-                            class="absolute inset-0 z-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:animate-[shimmer_1.5s_infinite]"
-                        ></div>
-                    </a>
+                                <span class="relative z-10">Call: (703) 772-5185</span>
+                                <div
+                                    class="absolute inset-0 z-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:animate-[shimmer_1.5s_infinite]"
+                                ></div>
+                            </a>
                         </div>
+                        </div>
+
+                        <aside
+                            class="serve-sidebar mt-8"
+                            aria-label="Recent install photos"
+                        >
+                            <p class="mb-3 text-center text-[10px] font-bold uppercase tracking-wider text-gray-500 sm:text-xs">
+                                Recent work
+                            </p>
+                            <div class="mx-auto flex w-full max-w-md flex-col gap-3 sm:gap-4 md:mx-0 md:max-w-none">
+                                <div
+                                    class="relative w-full overflow-hidden rounded-xl border border-gray-800/50 bg-black/50"
+                                    style="aspect-ratio: 4 / 3; min-height: 4.5rem;"
+                                >
+                                    <picture class="absolute inset-0 block h-full w-full">
+                                        <source srcset="Res70.webp" type="image/webp" />
+                                        <img
+                                            src="Res70.jpeg"
+                                            alt="Residential window film install"
+                                            class="h-full w-full object-cover opacity-90"
+                                            loading="lazy"
+                                            decoding="async"
+                                            width="320"
+                                            height="240"
+                                        />
+                                    </picture>
+                                    <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" aria-hidden="true"></div>
+                                </div>
+                                <div
+                                    class="relative w-full overflow-hidden rounded-xl border border-gray-800/50 bg-black/50"
+                                    style="aspect-ratio: 4 / 3; min-height: 4.5rem;"
+                                >
+                                    <picture class="absolute inset-0 block h-full w-full">
+                                        <source srcset="comvt.webp" type="image/webp" />
+                                        <img
+                                            src="comvt.webp"
+                                            alt="Commercial decorative window film"
+                                            class="h-full w-full object-cover opacity-90"
+                                            loading="lazy"
+                                            decoding="async"
+                                            width="320"
+                                            height="240"
+                                        />
+                                    </picture>
+                                    <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" aria-hidden="true"></div>
+                                </div>
+                                <div
+                                    class="relative w-full overflow-hidden rounded-xl border border-gray-800/50 bg-black/50"
+                                    style="aspect-ratio: 4 / 3; min-height: 4.5rem;"
+                                >
+                                    <picture class="absolute inset-0 block h-full w-full">
+                                        <source srcset="restvroom.webp" type="image/webp" />
+                                        <img
+                                            src="restvroom.jpeg"
+                                            alt="Residential living space window tint"
+                                            class="h-full w-full object-cover opacity-90"
+                                            loading="lazy"
+                                            decoding="async"
+                                            width="320"
+                                            height="240"
+                                        />
+                                    </picture>
+                                    <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" aria-hidden="true"></div>
+                                </div>
+                            </div>
+                        </aside>
                     </div>
                 </div>
             </section>
